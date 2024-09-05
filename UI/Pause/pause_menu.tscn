@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://droxg3cfsl03g"]
+
+[ext_resource type="Script" path="res://UI/Pause/pause_menu.gd" id="1_pm87j"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_pm87j")
+
+[node name="bg_menu" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.282353)
+
+[node name="menu" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resume_btn" type="Button" parent="menu"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="quit_btn" type="Button" parent="menu"]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="pressed" from="menu/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu/quit_btn" to="." method="_on_quit_btn_pressed"]
