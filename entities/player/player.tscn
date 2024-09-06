@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://gmajxo6xnsp7"]
+[gd_scene load_steps=6 format=3 uid="uid://gmajxo6xnsp7"]
 
 [ext_resource type="Script" path="res://entities/player/scripts/player.gd" id="1_65tij"]
 [ext_resource type="Texture2D" uid="uid://dc6s3tatmiukq" path="res://entities/player/sprites/player_prot_R_1.png" id="1_v8jxp"]
 [ext_resource type="Script" path="res://entities/player/scripts/controls.gd" id="3_yx1fn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8c1o"]
-size = Vector2(72, 184)
+size = Vector2(40, 40)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhes4"]
+size = Vector2(64, 192)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_65tij")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -16,7 +19,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_v8jxp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 28)
+position = Vector2(4, 100)
 shape = SubResource("RectangleShape2D_p8c1o")
 
 [node name="Controls" type="Node" parent="."]
@@ -24,3 +27,9 @@ script = ExtResource("3_yx1fn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+
+[node name="Area2D - for detection" type="Area2D" parent="." groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D - for detection"]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_vhes4")
