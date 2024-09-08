@@ -2,12 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://gmajxo6xnsp7" path="res://entities/player/player.tscn" id="1_tfhi3"]
 [ext_resource type="Script" path="res://entities/door/door.gd" id="1_w3het"]
+[ext_resource type="PackedScene" uid="uid://cbrl12vom11n7" path="res://composition/interactible/interactible_handler.tscn" id="2_k2t75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0ag8"]
 size = Vector2(116, 211)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8l1i"]
-size = Vector2(151, 214)
 
 [node name="Test1" type="Node"]
 
@@ -41,14 +39,9 @@ color = Color(0.933333, 0.67451, 0.270588, 1)
 position = Vector2(58, 106.5)
 shape = SubResource("RectangleShape2D_p0ag8")
 
-[node name="Area2D" type="Area2D" parent="Door"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D"]
-position = Vector2(59.5, 97)
-shape = SubResource("RectangleShape2D_l8l1i")
+[node name="InteractibleHandler" parent="Door" instance=ExtResource("2_k2t75")]
 
 [node name="Player" parent="." instance=ExtResource("1_tfhi3")]
 position = Vector2(262, 183)
 
-[connection signal="area_entered" from="Door/Area2D" to="Door" method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Door/Area2D" to="Door" method="_on_area_2d_body_entered"]
+[connection signal="player_interacted" from="Door/InteractibleHandler" to="Door" method="_on_interactible_handler_player_interacted"]
