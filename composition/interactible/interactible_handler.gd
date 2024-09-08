@@ -29,5 +29,7 @@ func _testIfHasColision() -> void:
 		if child is CollisionShape2D:
 			hasColision = true
 
-	assert(hasColision, "interactible_handler está sem collisionShape2D")
+	var errorMessage = "Node " + get_parent().name + "/" + name + " está sem collisionShape2D"
+
+	assert(hasColision, errorMessage)
 

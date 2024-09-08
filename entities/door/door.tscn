@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://4cu0bhafaefa"]
+
+[ext_resource type="Script" path="res://entities/door/scripts/door.gd" id="1_e1s8x"]
+[ext_resource type="PackedScene" uid="uid://cbrl12vom11n7" path="res://composition/interactible/interactible_handler.tscn" id="2_6r578"]
+[ext_resource type="Script" path="res://entities/door/scripts/door_tests.gd" id="3_jdrex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0ag8"]
+size = Vector2(116, 211)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_us5lq"]
+size = Vector2(142, 230)
+
+[node name="Door" type="StaticBody2D"]
+script = ExtResource("1_e1s8x")
+
+[node name="visuals" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="visuals"]
+layout_mode = 0
+offset_right = 156.0
+offset_bottom = 254.0
+scale = Vector2(0.76, 0.84)
+color = Color(0.623529, 0.278431, 0.0745098, 1)
+
+[node name="ColorRect" type="ColorRect" parent="visuals/ColorRect"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 116.0
+offset_right = 150.0
+offset_bottom = 137.0
+color = Color(0.933333, 0.67451, 0.270588, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(58, 106.5)
+shape = SubResource("RectangleShape2D_p0ag8")
+
+[node name="InteractibleHandler" parent="." instance=ExtResource("2_6r578")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractibleHandler"]
+visible = false
+position = Vector2(61, 105)
+shape = SubResource("RectangleShape2D_us5lq")
+
+[node name="Tests" type="Node" parent="."]
+script = ExtResource("3_jdrex")
+
+[connection signal="player_interacted" from="InteractibleHandler" to="." method="_on_interactible_handler_player_interacted"]

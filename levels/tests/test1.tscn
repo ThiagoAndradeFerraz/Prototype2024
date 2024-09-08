@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bobra2wgp1ay2"]
+[gd_scene load_steps=3 format=3 uid="uid://bobra2wgp1ay2"]
 
 [ext_resource type="PackedScene" uid="uid://gmajxo6xnsp7" path="res://entities/player/player.tscn" id="1_tfhi3"]
-[ext_resource type="Script" path="res://entities/door/door.gd" id="1_w3het"]
-[ext_resource type="PackedScene" uid="uid://cbrl12vom11n7" path="res://composition/interactible/interactible_handler.tscn" id="2_k2t75"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0ag8"]
-size = Vector2(116, 211)
+[ext_resource type="PackedScene" uid="uid://4cu0bhafaefa" path="res://entities/door/door.tscn" id="2_uvjts"]
 
 [node name="Test1" type="Node"]
 
@@ -16,32 +12,9 @@ offset_right = 1315.0
 offset_bottom = 826.0
 color = Color(0, 0.533333, 0.533333, 1)
 
-[node name="Door" type="StaticBody2D" parent="."]
-script = ExtResource("1_w3het")
-
-[node name="visuals" type="Node" parent="Door"]
-
-[node name="ColorRect" type="ColorRect" parent="Door/visuals"]
-offset_right = 156.0
-offset_bottom = 254.0
-scale = Vector2(0.76, 0.84)
-color = Color(0.623529, 0.278431, 0.0745098, 1)
-
-[node name="ColorRect" type="ColorRect" parent="Door/visuals/ColorRect"]
-layout_mode = 0
-offset_left = 126.0
-offset_top = 116.0
-offset_right = 150.0
-offset_bottom = 137.0
-color = Color(0.933333, 0.67451, 0.270588, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(58, 106.5)
-shape = SubResource("RectangleShape2D_p0ag8")
-
-[node name="InteractibleHandler" parent="Door" instance=ExtResource("2_k2t75")]
+[node name="Door" parent="." instance=ExtResource("2_uvjts")]
+position = Vector2(41, 28)
+target_level = "test2"
 
 [node name="Player" parent="." instance=ExtResource("1_tfhi3")]
 position = Vector2(262, 183)
-
-[connection signal="player_interacted" from="Door/InteractibleHandler" to="Door" method="_on_interactible_handler_player_interacted"]
