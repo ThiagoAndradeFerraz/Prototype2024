@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://entities/door/scripts/door_tests.gd" id="3_jdrex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0ag8"]
-size = Vector2(116, 211)
+size = Vector2(95, 95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us5lq"]
 size = Vector2(142, 230)
@@ -34,7 +34,7 @@ color = Color(0.933333, 0.67451, 0.270588, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(58, 106.5)
+position = Vector2(57.5, 48.5)
 shape = SubResource("RectangleShape2D_p0ag8")
 
 [node name="InteractibleHandler" parent="." instance=ExtResource("2_6r578")]

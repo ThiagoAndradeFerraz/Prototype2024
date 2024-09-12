@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://entities/player/scripts/controls.gd" id="3_yx1fn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8c1o"]
-size = Vector2(40, 40)
+size = Vector2(56, 184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhes4"]
 size = Vector2(64, 192)
@@ -19,7 +19,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_v8jxp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 100)
+visible = false
+position = Vector2(-4, 28)
 shape = SubResource("RectangleShape2D_p8c1o")
 
 [node name="Controls" type="Node" parent="."]
@@ -31,5 +32,6 @@ position_smoothing_enabled = true
 [node name="Area2D - for detection" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D - for detection"]
+visible = false
 position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_vhes4")

@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjbbngpwsk3i6"]
+
+[ext_resource type="Script" path="res://UI/Inventory/scripts/inventory_ui.gd" id="1_rcolq"]
+
+[node name="inventory_ui" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_rcolq")
+
+[node name="inventoy_control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="inventoy_control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="img_prev_item" type="ColorRect" parent="inventoy_control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 164.0
+offset_top = -160.0
+offset_right = 346.0
+offset_bottom = 64.0
+grow_vertical = 2
+
+[node name="img_current_item" type="ColorRect" parent="inventoy_control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -153.0
+offset_right = 144.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="img_next_item" type="ColorRect" parent="inventoy_control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = -158.0
+offset_right = -164.0
+offset_bottom = 66.0
+grow_horizontal = 0
+grow_vertical = 2
