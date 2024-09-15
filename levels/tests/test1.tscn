@@ -15,6 +15,7 @@ color = Color(0, 0.533333, 0.533333, 1)
 
 [node name="Door" parent="." instance=ExtResource("2_uvjts")]
 position = Vector2(41, 28)
+is_locked = true
 target_level = "test2"
 
 [node name="key1" parent="." instance=ExtResource("2_e6osf")]

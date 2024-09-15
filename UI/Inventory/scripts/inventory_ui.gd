@@ -22,3 +22,6 @@ func show_inventory():
 	'''
 
 	visible = not visible
+
+	if(not visible):
+		InventoryManager.set_expected_item(null) # reseting the expected item when closing inventory

@@ -3,14 +3,21 @@ extends Area2D
 var playerCanInteract : bool = false
 
 signal player_interacted
+signal inventory_opened
 
 func _ready():
 	_testIfHasColision()
 
 func _process(_delta):
 
-	if(playerCanInteract and Input.is_action_just_pressed("action")):
-		player_interacted.emit()
+	if(playerCanInteract):
+
+		if(Input.is_action_just_pressed("action")):
+			player_interacted.emit()
+
+		elif(Input.is_action_just_pressed("open_inventory")):
+			inventory_opened.emit()
+			
 
 func _on_area_entered(area:Area2D):
 

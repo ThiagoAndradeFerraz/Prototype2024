@@ -47,4 +47,5 @@ shape = SubResource("RectangleShape2D_us5lq")
 [node name="Tests" type="Node" parent="."]
 script = ExtResource("3_jdrex")
 
+[connection signal="inventory_opened" from="InteractibleHandler" to="." method="_on_interactible_handler_inventory_opened"]
 [connection signal="player_interacted" from="InteractibleHandler" to="." method="_on_interactible_handler_player_interacted"]
