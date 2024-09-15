@@ -6,10 +6,45 @@ func _ready():
 
 func _unhandled_input(event):
 	
-	if(event.is_action_pressed("open_inventory") and not get_tree().paused):
+	if(not get_tree().paused):
+
+		if(event.is_action_pressed("open_inventory") and not get_tree().paused):
+			
+			show_inventory()
+
+		elif(event.is_action_pressed("pause")):
+			
+			visible = false
+
+		elif(event.is_action_pressed("select")):
+			
+			if(visible):
+				select_item()			
+
+
+func select_item():
+
+	'''
+	TODO: Implementar os seguintes cenários:
+					
+		* Seleção de item sem comparação com algum esperado
+
+		* Seleção de item com comparação de algum item esperado
+			* Desconenctar o objeto a ser comparado do sinal
+	'''
+
+	if(InventoryManager.expected_item != null):
+		
+		print(InventoryManager.expected_item.name)
+		EventManager.notify_interacted_using_inv_item()
 		show_inventory()
-	elif(event.is_action_pressed("pause")):
-		visible = false
+
+	else:
+
+		print("PLAYER: consumiu item")
+
+	pass
+
 
 func show_inventory():
 
