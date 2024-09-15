@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 PauseMenu="*res://UI/Pause/pause_menu.tscn"
 InventoryUi="*res://UI/Inventory/inventory_ui.tscn"
+InventoryManager="*res://entities/inventory/inventory_manager.gd"
 
 [input]
 

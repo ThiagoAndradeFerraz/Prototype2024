@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 func _ready():
+	
 	visible = false
 
 func _unhandled_input(event):
@@ -12,7 +13,12 @@ func _unhandled_input(event):
 
 func show_inventory():
 
+	# TODO: precisa impedir que o jogador ande enquanto estiver aberto
 
-
+	'''
+	TODO:
+		* carregar dados do inventário
+		* impedir que o jogador ande enquanto estiver com o inventario aberto
+	'''
 
 	visible = not visible

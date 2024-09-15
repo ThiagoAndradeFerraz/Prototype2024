@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bobra2wgp1ay2"]
+[gd_scene load_steps=4 format=3 uid="uid://bobra2wgp1ay2"]
 
 [ext_resource type="PackedScene" uid="uid://gmajxo6xnsp7" path="res://entities/player/player.tscn" id="1_tfhi3"]
+[ext_resource type="PackedScene" uid="uid://ql3sbkwqa520" path="res://entities/collectibles/key1/key_1.tscn" id="2_e6osf"]
 [ext_resource type="PackedScene" uid="uid://4cu0bhafaefa" path="res://entities/door/door.tscn" id="2_uvjts"]
 
 [node name="Test1" type="Node"]
@@ -15,6 +16,9 @@ color = Color(0, 0.533333, 0.533333, 1)
 [node name="Door" parent="." instance=ExtResource("2_uvjts")]
 position = Vector2(41, 28)
 target_level = "test2"
+
+[node name="key1" parent="." instance=ExtResource("2_e6osf")]
+position = Vector2(454, 87)
 
 [node name="Player" parent="." instance=ExtResource("1_tfhi3")]
 position = Vector2(262, 183)
