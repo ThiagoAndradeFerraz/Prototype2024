@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bobra2wgp1ay2"]
+[gd_scene load_steps=7 format=3 uid="uid://bobra2wgp1ay2"]
 
 [ext_resource type="PackedScene" uid="uid://gmajxo6xnsp7" path="res://entities/player/player.tscn" id="1_tfhi3"]
 [ext_resource type="PackedScene" uid="uid://ql3sbkwqa520" path="res://entities/collectibles/key1/key_1.tscn" id="2_e6osf"]
-[ext_resource type="Resource" uid="uid://bocevla07e1l4" path="res://entities/collectibles/key1.tres" id="2_krm4h"]
+[ext_resource type="Resource" uid="uid://bocevla07e1l4" path="res://entities/collectibles/key1/key1.tres" id="2_krm4h"]
 [ext_resource type="PackedScene" uid="uid://4cu0bhafaefa" path="res://entities/door/door.tscn" id="2_uvjts"]
+[ext_resource type="PackedScene" uid="uid://dsou2p5ornl5x" path="res://entities/collectibles/key2/key_2.tscn" id="5_xk41y"]
+[ext_resource type="PackedScene" uid="uid://cfwpfu87uirgk" path="res://entities/collectibles/key3/key_3.tscn" id="6_3x00j"]
 
 [node name="Test1" type="Node"]
 
@@ -25,3 +27,9 @@ position = Vector2(454, 87)
 
 [node name="Player" parent="." instance=ExtResource("1_tfhi3")]
 position = Vector2(262, 183)
+
+[node name="key2" parent="." instance=ExtResource("5_xk41y")]
+position = Vector2(555, 192)
+
+[node name="key3" parent="." instance=ExtResource("6_3x00j")]
+position = Vector2(460, 363)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8v8jmo0n3tsp"]
 
 [ext_resource type="PackedScene" uid="uid://cbrl12vom11n7" path="res://composition/interactible/interactible_handler.tscn" id="1_4xrr8"]
-[ext_resource type="Texture2D" uid="uid://t7euqv4u5ah4" path="res://entities/collectibles/sprites/key1_world.png" id="2_u8ytw"]
+[ext_resource type="Texture2D" uid="uid://t7euqv4u5ah4" path="res://entities/collectibles/key1/sprites/key1_world.png" id="2_u8ytw"]
 
 [node name="Collectible" type="StaticBody2D"]
 

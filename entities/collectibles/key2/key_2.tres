@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bkpvhsb30qnmo"]
+
+[ext_resource type="Script" path="res://entities/inventory/inventory_item.gd" id="1_7tcjn"]
+[ext_resource type="Texture2D" uid="uid://kuioakqke64j" path="res://entities/collectibles/key2/sprites/key2_inv.png" id="1_nihq5"]
+
+[resource]
+script = ExtResource("1_7tcjn")
+name = "chave_vermelha"
+inventory_icon = ExtResource("1_nihq5")

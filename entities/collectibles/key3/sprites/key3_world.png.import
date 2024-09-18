@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dinur4w1d1i8s"
-path="res://.godot/imported/key1_inv.png-5105a98ebf18c272a8322191f995f2eb.ctex"
+uid="uid://bkdfx2tn38t8n"
+path="res://.godot/imported/key3_world.png-b0c2238945a1995953f3bfe7ac5f5a53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/collectibles/sprites/key1_inv.png"
-dest_files=["res://.godot/imported/key1_inv.png-5105a98ebf18c272a8322191f995f2eb.ctex"]
+source_file="res://entities/collectibles/key3/sprites/key3_world.png"
+dest_files=["res://.godot/imported/key3_world.png-b0c2238945a1995953f3bfe7ac5f5a53.ctex"]
 
 [params]
 
