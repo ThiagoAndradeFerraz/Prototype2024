@@ -16,6 +16,8 @@ func set_expected_item(item_to_expect : InventoryItem):
 func compare_selected_with_expected(index : int) -> bool:
 
 	if(inventory[index].get_path() == expected_item.get_path()):
+		inventory.remove_at(index)
 		return true
 	else:
 		return false
+

@@ -82,6 +82,8 @@ func close_inventory():
 
 func load_items():
 
+	reset_ui()
+
 	if(InventoryManager.inventory.size() == 0):
 		return
 
@@ -120,3 +122,8 @@ func load_items():
 			
 		slot_left.scale.x = 0.155
 		slot_left.scale.y = 0.155
+
+func reset_ui():
+	slot_left.texture = null
+	slot_center.texture = null
+	slot_right.texture = null

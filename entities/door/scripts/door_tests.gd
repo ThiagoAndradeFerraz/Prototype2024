@@ -2,15 +2,22 @@ extends Node
 
 var _target_level : String
 var _target_level_path : String
+var _is_locked : bool
+var _req_item : InventoryItem
 
-func executeTests(target_level : String, target_level_path : String):	
+func executeTests(
+	target_level : String, target_level_path : String, 
+	is_locked : bool, req_item : InventoryItem):	
 	
 	_target_level = target_level
 	_target_level_path = target_level_path
-	
+	_is_locked = is_locked
+	_req_item = req_item
+
 	_test_target_level_is_defined()
 	_test_target_level_is_not_current_level()
 	_test_if_target_level_exists()
+	_test_if_required_item_is_set()
 
 func _test_target_level_is_defined():
 
@@ -36,3 +43,11 @@ func _test_target_level_is_not_current_level():
 func _test_if_target_level_exists():
 
 	assert(ResourceLoader.exists(_target_level_path), _target_level_path + " não existe!")
+
+func _test_if_required_item_is_set():
+	
+	pass
+	# TODO: ARRUMAR ESSA MERDA!!!
+
+	# assert(_is_locked and _req_item == null,  "Node " 
+	# 	+ get_parent().name + " está sem req_item setado!")
