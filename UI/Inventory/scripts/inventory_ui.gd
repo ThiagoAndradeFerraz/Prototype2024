@@ -29,9 +29,7 @@ func _unhandled_input(event):
 			close_inventory()
 
 		elif(event.is_action_pressed("select")):
-
-			if(visible): # command valid only if inventory is opened
-				select_item()			
+			select_item()			
 
 		elif(event.is_action_pressed("move_right")):
 
@@ -51,12 +49,17 @@ func _unhandled_input(event):
 
 func select_item():
 
+	if(not visible or InventoryManager.inventory.size() <= 0):
+		return
+
 	if(InventoryManager.expected_item != null):
 		
 		print(InventoryManager.expected_item.name)
 		
 		# TODO: compare item. Maybe pass the selected item as argument?
-		EventManager.notify_interacted_using_inv_item()
+		
+		if(InventoryManager.compare_selected_with_expected(center_item_index)):
+			EventManager.notify_interacted_using_inv_item() # Notify the interacted item
 		
 		close_inventory()
 
