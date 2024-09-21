@@ -31,4 +31,4 @@ func _on_interactible_handler_inventory_opened():
 func on_event_bus_interacted_using_inv_item():
 	is_locked = false
 	print("PORTA DESTRANCADA")
-	EventManager.interacted_using_inv_item.disconnect(_on_interactible_handler_inventory_opened)
+	EventManager.interacted_using_inv_item.disconnect(on_event_bus_interacted_using_inv_item)
