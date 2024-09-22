@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkdfx2tn38t8n"
-path="res://.godot/imported/key3_world.png-b0c2238945a1995953f3bfe7ac5f5a53.ctex"
+path="res://.godot/imported/key3_world.png-a0b41b6cf19d0bed72aab7b1913a29ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/collectibles/key3/sprites/key3_world.png"
-dest_files=["res://.godot/imported/key3_world.png-b0c2238945a1995953f3bfe7ac5f5a53.ctex"]
+source_file="res://collectibles/key3/sprites/key3_world.png"
+dest_files=["res://.godot/imported/key3_world.png-a0b41b6cf19d0bed72aab7b1913a29ba.ctex"]
 
 [params]
 

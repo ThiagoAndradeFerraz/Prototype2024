@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjbbngpwsk3i6"]
+[gd_scene load_steps=3 format=3 uid="uid://bjbbngpwsk3i6"]
 
 [ext_resource type="Script" path="res://UI/Inventory/scripts/inventory_ui.gd" id="1_rcolq"]
+[ext_resource type="Texture2D" uid="uid://dinur4w1d1i8s" path="res://collectibles/key1/sprites/key1_inv.png" id="2_ermup"]
 
 [node name="inventory_ui" type="CanvasLayer"]
 process_mode = 3
@@ -40,6 +41,7 @@ grow_vertical = 2
 [node name="Sprite2D" type="Sprite2D" parent="inventoy_control/control_img_left"]
 position = Vector2(48, 124)
 scale = Vector2(0.155406, 0.155406)
+texture = ExtResource("2_ermup")
 
 [node name="control_img_center" type="Control" parent="inventoy_control"]
 layout_mode = 1
@@ -51,13 +53,45 @@ anchor_bottom = 0.5
 offset_left = 120.0
 offset_top = -161.0
 offset_right = 285.0
-offset_bottom = 58.0
+offset_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="inventoy_control/control_img_center"]
 position = Vector2(70, 117)
 scale = Vector2(0.256757, 0.256757)
+texture = ExtResource("2_ermup")
+
+[node name="item_name" type="Label" parent="inventoy_control/control_img_center"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -23.0
+offset_right = 28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "aaaaaa"
+
+[node name="item_qtd" type="Label" parent="inventoy_control/control_img_center"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.5
+offset_top = 4.0
+offset_right = 57.5
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "0x"
 
 [node name="control_img_right" type="Control" parent="inventoy_control"]
 layout_mode = 1
@@ -76,3 +110,4 @@ grow_vertical = 2
 [node name="Sprite2D" type="Sprite2D" parent="inventoy_control/control_img_right"]
 position = Vector2(48, 124)
 scale = Vector2(0.155406, 0.155406)
+texture = ExtResource("2_ermup")

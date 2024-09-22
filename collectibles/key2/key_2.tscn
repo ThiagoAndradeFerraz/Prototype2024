@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dsou2p5ornl5x"]
 
 [ext_resource type="Script" path="res://entities/collectibles/collectible.gd" id="1_50lm2"]
-[ext_resource type="Resource" uid="uid://bkpvhsb30qnmo" path="res://entities/collectibles/key2/key_2.tres" id="2_aa6am"]
+[ext_resource type="Resource" uid="uid://bkpvhsb30qnmo" path="res://collectibles/key2/key_2.tres" id="2_aa6am"]
 [ext_resource type="PackedScene" uid="uid://cbrl12vom11n7" path="res://composition/interactible/interactible_handler.tscn" id="3_yaavj"]
-[ext_resource type="Texture2D" uid="uid://chtrdwelldo5i" path="res://entities/collectibles/key2/sprites/key2_world.png" id="4_bsx20"]
+[ext_resource type="Texture2D" uid="uid://chtrdwelldo5i" path="res://collectibles/key2/sprites/key2_world.png" id="4_bsx20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cke65"]
 size = Vector2(34, 49)

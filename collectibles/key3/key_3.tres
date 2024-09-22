@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dg5si4idefeeu"]
 
-[ext_resource type="Texture2D" uid="uid://b3t3njaer8jv1" path="res://entities/collectibles/key3/sprites/key3_inv.png" id="1_1efm4"]
+[ext_resource type="Texture2D" uid="uid://b3t3njaer8jv1" path="res://collectibles/key3/sprites/key3_inv.png" id="1_1efm4"]
 [ext_resource type="Script" path="res://entities/inventory/inventory_item.gd" id="2_bq4e2"]
 
 [resource]
 script = ExtResource("2_bq4e2")
 name = "chave_verde"
 inventory_icon = ExtResource("1_1efm4")
+can_have_multiple = true

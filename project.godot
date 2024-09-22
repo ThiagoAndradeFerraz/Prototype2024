@@ -20,6 +20,7 @@ PauseMenu="*res://UI/Pause/pause_menu.tscn"
 InventoryUi="*res://UI/Inventory/inventory_ui.tscn"
 InventoryManager="*res://managers/inventory_manager.gd"
 EventManager="*res://managers/event_bus.gd"
+SaveManager="*res://managers/save_manager.gd"
 
 [input]
 

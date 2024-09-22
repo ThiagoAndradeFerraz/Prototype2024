@@ -28,9 +28,14 @@ grow_vertical = 2
 layout_mode = 2
 text = "RESUME"
 
+[node name="save_btn" type="Button" parent="menu"]
+layout_mode = 2
+text = "SAVE"
+
 [node name="quit_btn" type="Button" parent="menu"]
 layout_mode = 2
 text = "QUIT"
 
 [connection signal="pressed" from="menu/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu/save_btn" to="." method="_on_save_btn_pressed"]
 [connection signal="pressed" from="menu/quit_btn" to="." method="_on_quit_btn_pressed"]

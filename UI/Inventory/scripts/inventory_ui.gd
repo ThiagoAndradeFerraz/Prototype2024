@@ -2,14 +2,21 @@ extends CanvasLayer
 
 var center_item_index : int = 0
 
-var slot_left : Sprite2D
-var slot_center : Sprite2D
-var slot_right : Sprite2D
+var slot_left_sprite : Sprite2D
+var slot_center_sprite : Sprite2D
+var slot_right_sprite : Sprite2D
+
+var slot_center_lbl_name : Label
+var slot_center_lbl_qty : Label
 
 func _ready():
-	slot_left = $"inventoy_control/control_img_left/Sprite2D"
-	slot_center = $"inventoy_control/control_img_center/Sprite2D"
-	slot_right = $"inventoy_control/control_img_right/Sprite2D"
+	slot_left_sprite = $"inventoy_control/control_img_left/Sprite2D"
+
+	slot_center_sprite = $"inventoy_control/control_img_center/Sprite2D"
+	slot_center_lbl_name = $"inventoy_control/control_img_center/item_name"
+	slot_center_lbl_qty = $"inventoy_control/control_img_center/item_qtd"
+
+	slot_right_sprite = $"inventoy_control/control_img_right/Sprite2D"
 
 	visible = false
 
@@ -95,35 +102,45 @@ func load_items():
 
 	# fill the center
 
-	slot_center.texture = InventoryManager.inventory[center_item_index].inventory_icon
-	slot_center.scale.x = 0.257
-	slot_center.scale.y = 0.257
+	slot_center_sprite.texture = InventoryManager.inventory[center_item_index].item.inventory_icon
+	slot_center_sprite.scale.x = 0.257
+	slot_center_sprite.scale.y = 0.257
+
+	slot_center_lbl_name.text = InventoryManager.inventory[center_item_index].item.name
+	
+	if(not InventoryManager.inventory[center_item_index].item.can_have_multiple):
+		slot_center_lbl_qty.text = ""
+	else:
+		slot_center_lbl_qty.text = str(InventoryManager.inventory[center_item_index].quantity)
 
 	# if has right, fill right
 
 	if(InventoryManager.inventory.size() > 1):
 
 		if(center_item_index == InventoryManager.inventory.size() - 1):
-			slot_right.texture = InventoryManager.inventory[0].inventory_icon
+			slot_right_sprite.texture = InventoryManager.inventory[0].item.inventory_icon
 		else:
-			slot_right.texture = InventoryManager.inventory[center_item_index + 1].inventory_icon
+			slot_right_sprite.texture = InventoryManager.inventory[center_item_index + 1].item.inventory_icon
 			
-		slot_right.scale.x = 0.155
-		slot_right.scale.y = 0.155
+		slot_right_sprite.scale.x = 0.155
+		slot_right_sprite.scale.y = 0.155
 
 	# if has 3 or more, fill left too
 
 	if(InventoryManager.inventory.size() >= 3):
 
 		if(center_item_index == 0):
-			slot_left.texture = InventoryManager.inventory[InventoryManager.inventory.size() - 1].inventory_icon
+			slot_left_sprite.texture = InventoryManager.inventory[InventoryManager.inventory.size() - 1].item.inventory_icon
 		else:
-			slot_left.texture = InventoryManager.inventory[center_item_index - 1].inventory_icon
+			slot_left_sprite.texture = InventoryManager.inventory[center_item_index - 1].item.inventory_icon
 			
-		slot_left.scale.x = 0.155
-		slot_left.scale.y = 0.155
+		slot_left_sprite.scale.x = 0.155
+		slot_left_sprite.scale.y = 0.155
 
 func reset_ui():
-	slot_left.texture = null
-	slot_center.texture = null
-	slot_right.texture = null
+	slot_left_sprite.texture = null
+
+	slot_center_sprite.texture = null
+	slot_center_lbl_name.text = ""
+
+	slot_right_sprite.texture = null
