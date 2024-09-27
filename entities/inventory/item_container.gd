@@ -12,4 +12,5 @@ func add_quantity():
 
 func subtract_quantity():
 
-	pass
+	if(quantity > 0):
+		quantity = quantity - 1
