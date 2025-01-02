@@ -7,6 +7,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_camera: Camera2D
 var is_right: bool = true
 
+var can_climb: bool = false
+
+
 var climbing: bool = false
 
 func _ready():
@@ -31,10 +34,13 @@ func handle_jump():
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	elif Input.is_action_just_pressed("jump") and can_climb:
+		can_climb = false
+		velocity.y = JUMP_VELOCITY
 
 func handle_vertical_input() -> void:
 	
-	if (climbing):
+	if (can_climb):
 		var directionVertical = Input.get_axis("move_up", "move_down")
 		
 		if directionVertical:

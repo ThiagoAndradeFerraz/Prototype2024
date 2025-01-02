@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvcv8ogaac3u2"]
+[gd_scene load_steps=4 format=3 uid="uid://bvcv8ogaac3u2"]
 
-[ext_resource type="Texture2D" uid="uid://dc6s3tatmiukq" path="res://entities/player/sprites/player_prot_R_1.png" id="1_i3ixl"]
-[ext_resource type="Script" path="res://entities/player_v2/player_v2.gd" id="1_iikuw"]
+[ext_resource type="PackedScene" uid="uid://bp05nq5venx4b" path="res://entities/player_v2/player_v2.tscn" id="1_kpscq"]
+[ext_resource type="PackedScene" uid="uid://87blvl1qhpxw" path="res://entities/stairs/stairs.tscn" id="3_c1nhx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdaes"]
 size = Vector2(373.634, 29.7297)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_72c1t"]
-size = Vector2(6.68449, 10.1987)
 
 [node name="level" type="Node"]
 
@@ -27,19 +24,13 @@ position = Vector2(1756, 658)
 scale = Vector2(48.32, 7.4)
 shape = SubResource("RectangleShape2D_jdaes")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(0, 438)
-script = ExtResource("1_iikuw")
+[node name="Stairs" parent="." instance=ExtResource("3_c1nhx")]
+position = Vector2(204, 412)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-offset = Vector2(400, 0)
-position_smoothing_enabled = true
+[node name="Stairs" parent="Stairs" instance=ExtResource("3_c1nhx")]
+position = Vector2(166, -257)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_i3ixl")
+[node name="Stairs" parent="Stairs/Stairs" instance=ExtResource("3_c1nhx")]
+position = Vector2(179, -289)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-8, -1.5)
-scale = Vector2(7.48, 19.12)
-shape = SubResource("RectangleShape2D_72c1t")
+[node name="player" parent="." instance=ExtResource("1_kpscq")]
